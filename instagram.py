@@ -19,14 +19,14 @@ from argparse import ArgumentParser, ArgumentTypeError
 
 
 class Engine(object):
-    def __init__(self, username, threads, passlist_path, is_color):
+    def __init__(self, irteza_tariq14, threads, passlist_path, is_color):
         self.resume = False
         self.is_alive = True
         self.threads = threads
-        self.username = username
+        self.username = irteza_tariq14
         self.passlist_path = passlist_path
         self.display = Display(is_color=is_color)
-        self.bruter = Bruter(username, threads, passlist_path)
+        self.bruter = Bruter(irteza_tariq14, threads, passlist_path)
 
     def get_user_resp(self):
         return self.display.prompt(
@@ -35,7 +35,7 @@ class Engine(object):
 
     def write_to_file(self, password):
         with open(credentials, "at") as f:
-            data = "Username: {}\nPassword: {}\n\n".format(
+            data = "irteza_tariq14: {}\nPassword: {}\n\n".format(
                 self.username.title(), password
             )
             f.write(data)
@@ -128,7 +128,7 @@ def valid_float(n):
 
 def args():
     args = ArgumentParser()
-    args.add_argument("-u", "--username", help="email or username")
+    args.add_argument("-u", "--irteza_tariq14", help="email or irteza_tariq14")
     args.add_argument("-p", "--passlist", help="password list")
     args.add_argument("-px", "--proxylist", help="proxy list")
     args.add_argument(
@@ -159,14 +159,14 @@ def args():
     # ----------- #
 
     arguments = args.parse_args()
-    username = arguments.username
+    username = arguments.irteza_tariq14
     passlist = arguments.passlist
     proxylist = arguments.proxylist
     prune = arguments.prune
     stats = arguments.stats
     prune_db = prune > 0
 
-    if not (prune_db or stats or proxylist) and not (username and passlist):
+    if not (prune_db or stats or proxylist) and not (irteza_tariq14 and passlist):
         args.print_help()
         exit()
 
@@ -231,7 +231,7 @@ def display_database_stats():
 def main():
     arguments = args()
     mode = arguments.mode
-    username = arguments.username
+    username = arguments.irteza_tariq14
     passlist = arguments.passlist
     proxylist = arguments.proxylist
     prune = arguments.prune
@@ -266,7 +266,7 @@ def main():
                 exit()
 
             Engine(
-                username, modes[mode], passlist, not arguments.color
+                irteza_tariq14, modes[mode], passlist, not arguments.color
             ).start()
 
         else:
