@@ -23,10 +23,10 @@ class Engine(object):
         self.resume = False
         self.is_alive = True
         self.threads = threads
-        self.username = username
+        self.username = irteza_tariq14
         self.passlist_path = passlist_path
         self.display = Display(is_color=is_color)
-        self.bruter = Bruter(username, threads, passlist_path)
+        self.bruter = Bruter(irteza_tariq14, threads, passlist_path)
 
     def get_user_resp(self):
         return self.display.prompt(
@@ -35,8 +35,8 @@ class Engine(object):
 
     def write_to_file(self, password):
         with open(credentials, "at") as f:
-            data = "Username: {}\nPassword: {}\n\n".format(
-                self.username.title(), password
+            data = "irteza_tariq14: {}\nPassword: {}\n\n".format(
+                self.irteza_tariq14.title(), password
             )
             f.write(data)
 
@@ -128,7 +128,7 @@ def valid_float(n):
 
 def args():
     args = ArgumentParser()
-    args.add_argument("-u", "--username", help="email or username")
+    args.add_argument("-u", "--irteza_tariq14", help="email or username")
     args.add_argument("-p", "--passlist", help="password list")
     args.add_argument("-px", "--proxylist", help="proxy list")
     args.add_argument(
@@ -159,7 +159,7 @@ def args():
     # ----------- #
 
     arguments = args.parse_args()
-    username = arguments.username
+    username = arguments.irteza_tariq14
     passlist = arguments.passlist
     proxylist = arguments.proxylist
     prune = arguments.prune
@@ -231,7 +231,7 @@ def display_database_stats():
 def main():
     arguments = args()
     mode = arguments.mode
-    username = arguments.username
+    username = arguments.irteza_tariq14
     passlist = arguments.passlist
     proxylist = arguments.proxylist
     prune = arguments.prune
